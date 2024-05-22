@@ -1,4 +1,14 @@
 # NixOS configuration
+My NixOS configuration. Currently a huge mess; always a work in progress.
 ---
-## ToDo
-- Gotta work out an appropriate method of merging this repo with my dotfiles repo.
+## Contents
+- [About](#-about)
+- [Structure](#-structure)
+- [Features](#-features)
+- [Pending](#-pending)
+
+## About
+This repository is my NixOS flake configuration, rigged with Hyprland, Waybar and Rofi.
+
+## Pending
+- Merge `github:memorydistrict/nixos-config` with `github:memorydistrict/dotfiles`.
