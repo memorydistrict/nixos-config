@@ -2,9 +2,9 @@
     NixOS configuration
 </h1>
 
-<div align="center">
-    <i>My NixOS configuration. Currently a huge mess; always a work in progress.</i>
-</div>
+<p align="center">
+    ❄️ <i>Currently a huge mess; always a work in progress.</i> ❄️
+</p>
 
 ---
 
