@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    ❄️ <i>Currently a huge mess; always a work in progress.</i> ❄️
+    ❄️  <i>Currently a huge mess; always a work in progress.</i>  ❄️
 </p>
 
 ---
