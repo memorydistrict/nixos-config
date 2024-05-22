@@ -4,45 +4,29 @@
 
 # Define a user account.
 # TODO: Set a password with `passwd`
+# TODO: Modularize `users.users`
 
 { pkgs, ... } :
 
 {
+    # Import users
+#    imports = [
+#        ./users/thomas.nix
+#    ];
+
     users.users.thomas = {
         isNormalUser = true;
         description = "thomas";
-        extraGroups = [
-            "audio"
-            "input"
-            "networkmanager"
-            "tss"
-            "video"
-            "wheel"
-        ];
+        extraGroups = [ "wheel" ];
         # Set the user's shell
-        # TODO: Ensure the selected shell is enabled in `programs`
+        # TODO: Ensure the selected shell is enabled in `./shell.nix`
         shell = pkgs.zsh;
         packages = (with pkgs; [
             discord
             firefox
-            floorp
-            home-manager
+#            floorp
+#            home-manager
             thunderbird
         ]);
-    };
-
-    programs.zsh = {
-        enable = true;
-        ohMyZsh = {
-            enable = true;
-            plugins = [ "git" ];
-        };
-    };
-
-    environment = {
-        shells = [ pkgs.zsh ];
-        sessionVariables = rec {
-            EDITOR = "nvim";
-        };
     };
 }

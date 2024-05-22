@@ -9,13 +9,17 @@
     description = "memorydistrict.nix";
 
     inputs = {
-        # Nixpkgs
-        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+        nixpkgs.url = "nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "nixpkgs/nixos-23.11";
 
-        # Home manager
-        home-manager = {
-            url = "github:nix-community/home-manager/release-23.11";
+        home-manager-unstable = {
+            url = "github:nix-community/home-manager/master";
             inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        home-manager-stable = {
+            url = "github:nix-community/home-manager/release-23.11";
+            inputs.nixpkgs.follows = "nixpkgs-stable";
         };
     };
 
@@ -40,8 +44,7 @@
                     ./modules/display-manager.nix
                     ./modules/dns.nix
                     ./modules/fonts.nix
-                    ./modules/garbage-collection.nix
-                    #./modules/home-manager.nix
+                    ./modules/home-manager.nix
                     ./modules/internationalisation.nix
                     ./modules/networking.nix
                     ./modules/nix-settings.nix
@@ -57,10 +60,11 @@
                 ];
             };
         };
+
         homeConfigurations = {
             thomas = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
-                modules = [ home/thomas/.config/home-manager/home.nix ];
+                modules = [ /home/thomas/.config/home-manager/home.nix ];
             };
         };
     };
