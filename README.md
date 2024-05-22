@@ -1,9 +1,13 @@
-<h1 align="center">NixOS configuration</h1>
+<h1 align="center">
+    NixOS configuration
+</h1>
 
 <div align="center">
-<i>My NixOS configuration. Currently a huge mess; always a work in progress.</i>
+    <i>My NixOS configuration. Currently a huge mess; always a work in progress.</i>
 </div>
+
 ---
+
 ## Contents
 - [About](#about)
 - [Structure](#structure)
